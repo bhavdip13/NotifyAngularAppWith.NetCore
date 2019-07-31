@@ -1,0 +1,34 @@
+<br />
+<br />
+<br />
+<br />
+<h3 class="text-center">Employee Data</h3>
+
+
+<p *ngIf="!empList"><em>Loading...</em></p>
+
+
+<table class='table table-striped' *ngIf="empList">
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of empList">
+            <td>{{ emp.empID }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{ emp.gender }}</td>
+            <td>
+                <a class="btn btn-secondary" style="cursor:pointer;color:white;" (click)="notify(emp.name)"><i _ngcontent-c0="" class="fa fa-bullhorn"></i> Notify</a>
+            </td>
+        </tr>
+    </tbody>
+</table> 
